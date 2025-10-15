@@ -1,10 +1,26 @@
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Summary, SummarySkeleton } from "@/checkout/sections/Summary";
 import { OrderInfo } from "@/checkout/sections/OrderInfo";
 import { useOrder } from "@/checkout/hooks/useOrder";
 
 export const OrderConfirmation = () => {
 	const { order } = useOrder();
+	const [countdown, setCountdown] = useState(5);
+
+	useEffect(() => {
+		const timer = setInterval(() => {
+			setCountdown((prev) => {
+				if (prev <= 1) {
+					// 使用 window.location 进行跳转
+					window.location.href = "/orders";
+					return 0;
+				}
+				return prev - 1;
+			});
+		}, 1000);
+
+		return () => clearInterval(timer);
+	}, []);
 
 	return (
 		<main className="grid grid-cols-1 gap-x-16 lg:grid-cols-2">
@@ -16,6 +32,9 @@ export const OrderConfirmation = () => {
 					<p className="text-base">
 						Thank you for placing your order. We&apos;ve received it and we will contact you as soon as your
 						package is shipped. A confirmation email has been sent to {order.userEmail}.
+					</p>
+					<p className="mt-4 text-sm text-gray-600">
+						Redirecting to your orders page in {countdown} seconds...
 					</p>
 				</header>
 				<OrderInfo />

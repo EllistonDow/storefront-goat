@@ -1,16 +1,19 @@
-version: "3"
-
 services:
   saleor-storefront:
     container_name: saleor-storefront
     build:
       dockerfile: Dockerfile
       args:
-        NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL}
-        NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL}
+        NEXT_PUBLIC_SALEOR_API_URL: https://api.saleor.tattoogoat.com/graphql/
+        NEXT_PUBLIC_STOREFRONT_URL: https://storefront.saleor.tattoogoat.com
+        NEXT_PUBLIC_CHECKOUT_URL: https://storefront.saleor.tattoogoat.com/checkout/
+    environment:
+      - NEXT_PUBLIC_SALEOR_API_URL=https://api.saleor.tattoogoat.com/graphql/
+      - NEXT_PUBLIC_STOREFRONT_URL=https://storefront.saleor.tattoogoat.com
+      - NEXT_PUBLIC_CHECKOUT_URL=https://storefront.saleor.tattoogoat.com/checkout/
     restart: always
     ports:
-      - 3000:3000
+      - 3030:3030
     networks:
       - saleor_network
 
@@ -18,4 +21,5 @@ services:
 
 networks:
   saleor_network:
-    external: false
+    external: true
+    name: saleorgoat_network
