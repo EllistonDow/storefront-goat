@@ -2,9 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { executeGraphQL } from "@/lib/graphql";
 import { PasswordChangeDocument } from "@/gql/graphql";
 
+interface PasswordChangeRequest {
+	oldPassword: string;
+	newPassword: string;
+}
+
 export async function POST(request: NextRequest) {
 	try {
-		const body = await request.json();
+		const body = await request.json() as PasswordChangeRequest;
 		const { oldPassword, newPassword } = body;
 
 		const result = await executeGraphQL(PasswordChangeDocument, {

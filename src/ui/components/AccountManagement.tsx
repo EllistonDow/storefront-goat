@@ -1,6 +1,5 @@
 import { redirect } from "next/navigation";
 import { headers } from "next/headers";
-import { LinkWithChannel } from "@/ui/atoms/LinkWithChannel";
 import { CurrentUserDocument } from "@/gql/graphql";
 import { executeGraphQL } from "@/lib/graphql";
 import { AccountTabs } from "./AccountTabs";
