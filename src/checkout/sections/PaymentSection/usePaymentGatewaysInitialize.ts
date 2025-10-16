@@ -39,10 +39,16 @@ export const usePaymentGatewaysInitialize = () => {
 					const parsedConfigs = (data.gatewayConfigs || []) as ParsedPaymentGateways;
 
 					if (!parsedConfigs.length) {
-						throw new Error("No available payment gateways");
+						// 如果 paymentGatewayInitialize 失败，使用原始的 availablePaymentGateways
+						console.warn("paymentGatewayInitialize returned empty configs, using availablePaymentGateways directly");
+						const fallbackConfigs = getFilteredPaymentGateways(availablePaymentGateways).map(({ config, id }) => ({
+							id,
+							data: config,
+						})) as ParsedPaymentGateways;
+						setGatewayConfigs(fallbackConfigs);
+					} else {
+						setGatewayConfigs(parsedConfigs);
 					}
-
-					setGatewayConfigs(parsedConfigs);
 				},
 				onError: ({ errors }) => {
 					console.log({ errors });

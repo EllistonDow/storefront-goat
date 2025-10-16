@@ -79,11 +79,17 @@ export async function LoginForm() {
 				</button>
 			</form>
 			
-			<div className="mt-6 text-center">
+			<div className="mt-6 text-center space-y-2">
 				<p className="text-sm text-gray-600">
 					Don&apos;t have an account?{" "}
 					<LinkWithChannel href="/register" className="text-blue-600 hover:text-blue-800">
 						Create one here
+					</LinkWithChannel>
+				</p>
+				<p className="text-sm text-gray-600">
+					Forgot your password?{" "}
+					<LinkWithChannel href="/forgot-password" className="text-blue-600 hover:text-blue-800">
+						Reset it here
 					</LinkWithChannel>
 				</p>
 			</div>

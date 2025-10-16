@@ -11,6 +11,7 @@ const queryParamsMap = {
 	token: "passwordResetToken",
 	email: "passwordResetEmail",
 	saleorApiUrl: "saleorApiUrl",
+	showSignIn: "showSignIn",
 	// payment flow
 	transaction: "transaction", // allows us to process started transaction
 	processingPayment: "processingPayment", // tell the processing screen to show up
