@@ -1,40 +1,426 @@
 # Changelog
 
-## [1.1.1] - 2025-01-16
+All notable changes to this project will be documented in this file.
 
-### ✨ Added
-- **Enhanced Account Management System**
-  - Complete user profile editing functionality
-  - Password change feature with validation
-  - Address book management interface
-  - Modern tabbed interface for better UX
+## [1.3.0] - 2024-12-19
 
-### 🔧 Fixed
-- Fixed urql Provider error in account management
-- Resolved client-side GraphQL dependency issues
-- Improved error handling and user feedback
+### 🎬 **重大更新 - 光效产品卡片系统**
 
-### 🎨 Improved
-- Replaced basic account page with comprehensive management interface
-- Added server-side API routes for secure operations
-- Enhanced UI/UX with modern design patterns
-- Better form validation and success/error messaging
+#### ✨ **新增功能**
 
-### 🏗️ Technical Changes
-- Created `/api/account/update` endpoint for profile updates
-- Created `/api/account/password-change` endpoint for password changes
-- Updated GraphQL queries to include address information
-- Implemented proper error handling and validation
+##### **React Spring 物理效果组件**
+- 🏀 **弹跳效果** - 真实弹跳物理效果，高张力低摩擦力
+- 🌍 **重力效果** - 3D重力感旋转，立体阴影效果
+- 🎈 **弹性效果** - 橡皮筋般弹性动画，回弹效果
+- 🧲 **磁力效果** - 跟随鼠标移动，高互动性体验
+- 🌊 **摇摆效果** - 波浪般摇摆动画，有趣的视觉效果
 
-### 📱 Features
-- **Profile Tab**: Edit first name, last name (email read-only)
-- **Password Tab**: Change password with current password verification
-- **Addresses Tab**: View saved addresses with default indicators
-- **Orders Tab**: Quick access to order history
-- **Quick Actions**: Easy access to common functions
+##### **Framer Motion 动画组件**
+- 🧲 **磁力效果** - 3D鼠标跟踪和实时旋转
+- ✨ **粒子效果** - 动态粒子动画系统，梦幻视觉效果
+- 🔥 **火焰效果** - 动态火焰动画和温度渐变
+- 🌊 **波浪效果** - 多层波浪边框和彩虹渐变
+- 🎈 **浮动效果** - 轻盈浮动和呼吸光效
+- 🔄 **变形效果** - 形状变化和颜色过渡
+
+##### **纯CSS光效组件**
+- ⚡ **轻量级实现** - 无需额外依赖
+- 🎨 **多种颜色** - 蓝色、红色、绿色、紫色、彩虹
+- 📱 **性能优化** - 硬件加速和快速加载
+- 🌙 **暗色模式** - 完整的暗色模式支持
+
+#### 🎯 **演示页面**
+
+##### **物理效果演示** - `/physics-demo`
+- 展示 React Spring 的5种物理效果
+- 交互式体验和实时参数调整
+- 性能对比和技术说明
+
+##### **Framer Motion 演示** - `/framer-demo`
+- 展示 Framer Motion 的6种动画效果
+- 高级动画技巧和手势识别
+- 交错动画和滚动触发
+
+#### 🛠️ **技术特性**
+
+##### **React Spring 特性**
+- 真实物理参数配置 (tension, friction)
+- 硬件加速优化
+- 60fps 流畅动画
+- 内存友好的动画管理
+
+##### **Framer Motion 特性**
+- 鼠标位置跟踪和3D变换
+- 复杂的动画序列和交错动画
+- 手势识别和触摸支持
+- 布局动画和共享元素过渡
+
+##### **性能优化**
+- 硬件加速的动画渲染
+- 智能的动画优化和批处理
+- 条件渲染和懒加载
+- 移动端性能优化
+
+#### 📚 **文档和指南**
+
+##### **使用指南**
+- `PHYSICS_EFFECTS.md` - React Spring 详细使用指南
+- `FRAMER_MOTION_GUIDE.md` - Framer Motion 完整指南
+- `GLOW_EFFECTS.md` - 光效效果综合指南
+- `FRONTEND_TOOLS.md` - 前端工具推荐
+
+##### **代码示例**
+- 完整的组件实现
+- 多种使用场景示例
+- 性能优化最佳实践
+- 自定义动画配置
+
+#### 🔧 **依赖更新**
+
+##### **新增依赖**
+- `@react-spring/web@^9.7.0` - React Spring 物理动画库
+- `framer-motion@^11.0.0` - Framer Motion 动画库
+
+##### **现有依赖**
+- `swiper@^11.0.0` - 轮播组件库
+- `next-themes@^0.4.4` - 主题切换
+- `next-pwa@^5.6.0` - PWA 支持
+
+#### 🎨 **UI/UX 改进**
+
+##### **视觉效果**
+- 多层阴影和发光效果
+- 动态光粒子动画
+- 彩虹边框和渐变
+- 3D变换和透视效果
+
+##### **交互体验**
+- 鼠标跟踪和磁力效果
+- 悬停动画和反馈
+- 按钮序列动画
+- 手势识别支持
+
+##### **响应式设计**
+- 移动端完美适配
+- 触摸设备优化
+- 不同屏幕尺寸支持
+- 性能自适应
+
+#### 🚀 **部署和构建**
+
+##### **Docker 优化**
+- 依赖安装优化
+- 构建缓存改进
+- 镜像大小优化
+- 启动时间减少
+
+##### **开发体验**
+- 热重载支持
+- 错误边界处理
+- 开发工具集成
+- 调试信息完善
+
+#### 📱 **兼容性**
+
+##### **浏览器支持**
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+
+##### **设备支持**
+- 桌面端完整支持
+- 移动端优化
+- 平板设备适配
+- 触摸设备支持
+
+#### 🔒 **安全性**
+
+##### **代码安全**
+- TypeScript 类型检查
+- ESLint 代码规范
+- 依赖安全扫描
+- 输入验证和清理
+
+#### 📊 **性能指标**
+
+##### **加载性能**
+- 首屏加载时间 < 2s
+- 动画帧率 60fps
+- 内存使用优化
+- 网络请求减少
+
+##### **用户体验**
+- 交互响应时间 < 100ms
+- 动画流畅度优化
+- 错误率降低
+- 用户满意度提升
 
 ---
 
-## [1.1.0] - Previous Version
-- Basic storefront functionality
-- Simple account page with limited features
+## [1.2.0] - 2024-12-18
+
+### 🎨 **现代化首页更新**
+
+#### ✨ **新增功能**
+- 英雄区域 (Hero Section) - 全屏轮播横幅
+- 现代化产品卡片 - 悬停效果、评分、快速操作
+- 特色功能区域 - 免费配送、安全支付等
+- 客户评价轮播 - 增加信任度
+- 邮件订阅区域 - 营销转化
+- 联系信息区域 - 客户支持
+- 滚动动画效果
+- 移动端响应式设计优化
+
+#### 🔧 **技术改进**
+- 集成 Swiper.js 轮播组件
+- 添加 Framer Motion 动画支持
+- 优化加载性能和SEO
+- 移除假数据，使用真实产品数据
+
+---
+
+## [1.1.15] - 2024-12-19
+
+### 🎬 **Framer Motion 光效组件**
+
+#### ✨ **新增功能**
+- FramerMotionGlowCard 组件
+- 6种动画效果类型
+- 高级动画技巧和手势识别
+- Framer Motion 演示页面
+
+#### 🔧 **技术改进**
+- 集成 framer-motion 依赖
+- 鼠标跟踪和3D变换
+- 交错动画和滚动触发
+- 性能优化和硬件加速
+
+---
+
+## [1.1.14] - 2024-12-19
+
+### ⚡ **React Spring 物理效果组件**
+
+#### ✨ **新增功能**
+- PhysicsGlowCard 组件
+- 5种物理效果类型
+- 真实物理参数配置
+- 物理效果演示页面
+
+#### 🔧 **技术改进**
+- 集成 @react-spring/web 依赖
+- 物理动画引擎
+- 光粒子效果
+- 按钮序列动画
+
+---
+
+## [1.1.13] - 2024-12-18
+
+### 🎨 **首页现代化更新**
+
+#### ✨ **新增功能**
+- 时尚美女图片轮播
+- 现代化产品卡片设计
+- 特色功能展示区域
+- 客户评价轮播
+- 邮件订阅功能
+- 联系信息区域
+
+#### 🔧 **技术改进**
+- 集成 Swiper.js 轮播组件
+- 添加滚动动画效果
+- 优化移动端响应式设计
+- 移除假数据和快速查看功能
+
+---
+
+## [1.1.12] - 2024-12-18
+
+### 🌙 **暗色模式和PWA功能**
+
+#### ✨ **新增功能**
+- 完整的暗色模式支持
+- PWA (Progressive Web App) 功能
+- 主题切换组件
+- Web App Manifest
+
+#### 🔧 **技术改进**
+- 集成 next-themes 主题管理
+- 集成 next-pwa 插件
+- 暗色模式样式优化
+- PWA 安装提示组件
+
+#### 🐛 **Bug修复**
+- 修复 checkout 页面颜色问题
+- 修复账户页面暗色模式样式
+- 修复订单页面颜色显示
+- 修复忘记密码页面输入框颜色
+- 修复国家/州下拉框颜色问题
+- 解决 Next.js themeColor 元数据警告
+
+---
+
+## [1.1.11] - 2024-12-18
+
+### 🔄 **版本回退**
+
+#### 📝 **变更**
+- 回退到稳定版本 1.1.11
+- 移除现代化首页组件
+- 恢复原始简洁设计
+- 保持核心功能稳定
+
+---
+
+## [1.1.10] - 2024-12-18
+
+### 🎨 **首页现代化**
+
+#### ✨ **新增功能**
+- 英雄区域全屏轮播
+- 现代化产品卡片
+- 特色功能展示
+- 客户评价轮播
+- 邮件订阅区域
+- 联系信息区域
+
+#### 🔧 **技术改进**
+- 添加滚动动画
+- 优化移动端响应式
+- 集成动画库
+- 性能优化
+
+---
+
+## [1.1.9] - 2024-12-18
+
+### 🔧 **技术优化**
+
+#### 🐛 **Bug修复**
+- 修复 PWA 安装提示
+- 解决 Next.js 元数据警告
+- 优化暗色模式样式
+- 改进错误处理
+
+#### ⚡ **性能改进**
+- 优化加载时间
+- 减少包大小
+- 改进缓存策略
+- 优化图片加载
+
+---
+
+## [1.1.8] - 2024-12-18
+
+### 🌙 **暗色模式完善**
+
+#### ✨ **新增功能**
+- 完整的暗色模式支持
+- 主题切换组件
+- 暗色模式样式优化
+
+#### 🔧 **技术改进**
+- 集成 next-themes
+- 优化 Tailwind CSS 配置
+- 改进组件样式
+- 添加过渡动画
+
+---
+
+## [1.1.7] - 2024-12-18
+
+### 🔧 **Channel 切换功能**
+
+#### ✨ **新增功能**
+- Channel 切换组件
+- App Token 认证
+- 多频道支持
+
+#### 🔧 **技术改进**
+- 集成 GraphQL 查询
+- 添加认证头
+- 优化错误处理
+- 改进用户体验
+
+---
+
+## [1.1.6] - 2024-12-18
+
+### 🐛 **Bug修复**
+
+#### 🔧 **修复内容**
+- 修复 Channel 切换显示问题
+- 解决 App Token 权限问题
+- 优化错误处理
+- 改进用户体验
+
+---
+
+## [1.1.5] - 2024-12-18
+
+### 🔧 **环境配置**
+
+#### 📝 **配置更新**
+- 添加 DEFAULT_CHANNEL_SLUG
+- 配置环境变量
+- 优化 Docker 配置
+- 改进构建流程
+
+---
+
+## [1.1.4] - 2024-12-18
+
+### 🐛 **Bug修复**
+
+#### 🔧 **修复内容**
+- 修复 Channel 切换功能
+- 解决环境变量问题
+- 优化错误处理
+- 改进日志记录
+
+---
+
+## [1.1.3] - 2024-12-18
+
+### 🔧 **技术改进**
+
+#### ⚡ **性能优化**
+- 优化加载时间
+- 减少包大小
+- 改进缓存策略
+- 优化图片处理
+
+---
+
+## [1.1.2] - 2024-12-18
+
+### 🎨 **UI改进**
+
+#### ✨ **新增功能**
+- 改进产品卡片设计
+- 优化搜索体验
+- 添加加载状态
+- 改进错误页面
+
+---
+
+## [1.1.1] - 2024-12-18
+
+### 🚀 **初始版本**
+
+#### ✨ **核心功能**
+- Saleor Storefront 基础功能
+- 产品展示和搜索
+- 购物车和结账
+- 用户账户管理
+- 响应式设计
+
+#### 🔧 **技术栈**
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+- GraphQL
+- Docker
