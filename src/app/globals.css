@@ -5,3 +5,13 @@
 body {
 	overflow-x: hidden;
 }
+
+/* 暗色模式基础样式 */
+html.dark {
+	color-scheme: dark;
+}
+
+/* 平滑的主题切换过渡 */
+* {
+	transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}

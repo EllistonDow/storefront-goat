@@ -10,10 +10,10 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
 # Copy package files
-COPY package.json pnpm-lock.yaml ./
+COPY package.json ./
 
 # Install dependencies
-RUN pnpm i --frozen-lockfile --prefer-offline
+RUN pnpm i --no-frozen-lockfile
 
 # Copy source code
 COPY . .

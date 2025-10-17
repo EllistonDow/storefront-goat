@@ -4,6 +4,7 @@ import { CartNavItem } from "./components/CartNavItem";
 import { NavLinks } from "./components/NavLinks";
 import { MobileMenu } from "./components/MobileMenu";
 import { SearchBar } from "./components/SearchBar";
+import { ThemeToggle } from "../ThemeToggle";
 
 export const Nav = ({ channel }: { channel: string }) => {
 	return (
@@ -15,6 +16,7 @@ export const Nav = ({ channel }: { channel: string }) => {
 				<div className="hidden lg:flex">
 					<SearchBar channel={channel} />
 				</div>
+				<ThemeToggle />
 				<Suspense fallback={<div className="w-8" />}>
 					<UserMenuContainer />
 				</Suspense>
