@@ -30,6 +30,7 @@ export const SelectBox = <TFieldName extends string>({
 				"relative mb-2 flex cursor-pointer flex-row items-center justify-start rounded border border-neutral-400 px-3 py-2",
 				"hover:border hover:border-neutral-500",
 				{ "border border-neutral-500": selected, "pointer-events-none hover:border-neutral-400": disabled },
+				"dark:border-neutral-600 dark:bg-neutral-700 dark:hover:border-neutral-500 dark:text-neutral-100",
 				className,
 			)}
 		>
@@ -39,7 +40,7 @@ export const SelectBox = <TFieldName extends string>({
 				onChange={handleChange}
 				value={value}
 				checked={selected}
-				className="rounded-full border-neutral-300 text-neutral-600 shadow-sm focus:border-neutral-300 focus:ring focus:ring-neutral-200 focus:ring-opacity-50 focus:ring-offset-0"
+				className="rounded-full border-neutral-300 text-neutral-600 shadow-sm focus:border-neutral-300 focus:ring focus:ring-neutral-200 focus:ring-opacity-50 focus:ring-offset-0 dark:border-neutral-500 dark:text-neutral-300 dark:focus:border-neutral-400 dark:focus:ring-neutral-500"
 			/>
 			<span className="ml-2 block w-full">{children}</span>
 		</label>
