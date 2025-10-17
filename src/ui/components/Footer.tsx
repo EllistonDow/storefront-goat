@@ -10,15 +10,16 @@ export async function Footer({ channel }: { channel: string }) {
 		variables: { slug: "footer", channel },
 		revalidate: 60 * 60 * 24,
 	});
-	const channels = process.env.SALEOR_APP_TOKEN
-		? await executeGraphQL(ChannelsListDocument, {
-				withAuth: false, // disable cookie-based auth for this call
-				headers: {
-					// and use app token instead
-					Authorization: `Bearer ${process.env.SALEOR_APP_TOKEN}`,
-				},
-		  })
-		: null;
+	
+	const channels = await executeGraphQL(ChannelsListDocument, {
+		withAuth: false, // disable cookie-based auth for this call
+		headers: {
+			// and use app token instead
+			Authorization: `Bearer ${process.env.SALEOR_APP_TOKEN}`,
+		},
+		revalidate: 60 * 60 * 24,
+	});
+	
 	const currentYear = new Date().getFullYear();
 
 	return (
@@ -73,10 +74,10 @@ export async function Footer({ channel }: { channel: string }) {
 					})}
 				</div>
 
-				{channels?.channels && (
+				{channels?.channels && channels.channels.length > 1 && (
 					<div className="mb-4 text-neutral-500">
 						<label>
-							<span className="text-sm">Change currency:</span> <ChannelSelect channels={channels.channels} />
+							<span className="text-sm">Switch channel:</span> <ChannelSelect channels={channels.channels} />
 						</label>
 					</div>
 				)}

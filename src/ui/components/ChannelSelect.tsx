@@ -21,7 +21,7 @@ export const ChannelSelect = ({
 		>
 			{channels.map((channel) => (
 				<option key={channel.id} value={channel.slug}>
-					{channel.currencyCode}
+					{channel.name} ({channel.currencyCode})
 				</option>
 			))}
 		</select>

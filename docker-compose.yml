@@ -10,11 +10,14 @@ services:
     volumes:
       - ./src:/app/src
       - ./public:/app/public
+    env_file:
+      - .env
     environment:
       - NODE_ENV=development
       - NEXT_PUBLIC_SALEOR_API_URL=https://api.saleor.tattoogoat.com/graphql/
       - NEXT_PUBLIC_STOREFRONT_URL=https://storefront.saleor.tattoogoat.com
       - NEXT_PUBLIC_CHECKOUT_URL=https://storefront.saleor.tattoogoat.com/checkout/
+      - SALEOR_APP_TOKEN=${SALEOR_APP_TOKEN}
     restart: always
     ports:
       - 3030:3030
