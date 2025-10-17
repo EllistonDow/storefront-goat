@@ -40,6 +40,7 @@
 		"react-test-renderer": "18.2.0",
 		"react-toastify": "^11.0.0",
 		"swiper": "^11.0.0",
+		"@react-spring/web": "^9.7.0",
 		"sharp": "0.33.2",
 		"ts-invariant": "0.10.3",
 		"url-join": "5.0.0",
