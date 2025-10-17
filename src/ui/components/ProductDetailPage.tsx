@@ -39,7 +39,7 @@ interface Product {
 	category: string;
 	brand: string;
 	rating: number;
-	reviews: number;
+	reviewCount: number;
 	inStock: boolean;
 	stockQuantity: number;
 	variants: ProductVariant[];
@@ -228,7 +228,7 @@ export function ProductDetailPage({
 									))}
 								</div>
 								<span className="text-sm text-gray-500 dark:text-neutral-400">
-									{product.rating} ({product.reviews} 评价)
+									{product.rating} ({product.reviewCount} 评价)
 								</span>
 							</div>
 						</div>
@@ -586,7 +586,7 @@ export function ProductDetailDemo() {
 		category: "女装",
 		brand: "Fashion Brand",
 		rating: 4.5,
-		reviews: 128,
+		reviewCount: 128,
 		inStock: true,
 		stockQuantity: 50,
 		variants: [
