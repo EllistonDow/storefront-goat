@@ -10,7 +10,7 @@ export const CartNavItem = async ({ channel }: { channel: string }) => {
 	const lineCount = checkout ? checkout.lines.reduce((result, line) => result + line.quantity, 0) : 0;
 
 	return (
-		<LinkWithChannel href="/cart" className="relative flex items-center" data-testid="CartNavItem">
+		<LinkWithChannel href="/cart" className="relative flex items-center text-neutral-900 dark:text-neutral-100" data-testid="CartNavItem">
 			<ShoppingBagIcon className="h-6 w-6 shrink-0" aria-hidden="true" />
 			{lineCount > 0 ? (
 				<div

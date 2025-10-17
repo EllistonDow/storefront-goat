@@ -87,18 +87,18 @@ export function RegisterForm() {
 
 	return (
 		<div className="mx-auto mt-16 w-full max-w-lg">
-			<div className="rounded border p-8 shadow-md">
-				<h1 className="mb-6 text-2xl font-bold text-center">Create Account</h1>
+			<div className="rounded border p-8 shadow-md bg-white dark:bg-neutral-800 dark:border-neutral-600">
+				<h1 className="mb-6 text-2xl font-bold text-center text-neutral-900 dark:text-neutral-100">Create Account</h1>
 				
 				{error && (
-					<div className="mb-4 rounded bg-red-100 p-3 text-red-700">
+					<div className="mb-4 rounded bg-red-100 p-3 text-red-700 dark:bg-red-900 dark:text-red-300">
 						{error}
 					</div>
 				)}
 
 				<form onSubmit={handleSubmit}>
 					<div className="mb-4">
-						<label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="email">
+						<label className="block text-sm font-medium text-gray-700 mb-2 dark:text-neutral-300" htmlFor="email">
 							Email Address
 						</label>
 						<input
@@ -107,13 +107,13 @@ export function RegisterForm() {
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 							placeholder="Enter your email"
-							className="w-full rounded border bg-neutral-50 px-4 py-2"
+							className="w-full rounded border bg-neutral-50 px-4 py-2 dark:bg-neutral-700 dark:border-neutral-600 dark:text-neutral-100 dark:placeholder:text-neutral-400"
 							required
 						/>
 					</div>
 
 					<div className="mb-4">
-						<label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="password">
+						<label className="block text-sm font-medium text-gray-700 mb-2 dark:text-neutral-300" htmlFor="password">
 							Password
 						</label>
 						<input
@@ -122,14 +122,14 @@ export function RegisterForm() {
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 							placeholder="Enter your password"
-							className="w-full rounded border bg-neutral-50 px-4 py-2"
+							className="w-full rounded border bg-neutral-50 px-4 py-2 dark:bg-neutral-700 dark:border-neutral-600 dark:text-neutral-100 dark:placeholder:text-neutral-400"
 							required
 							minLength={8}
 						/>
 					</div>
 
 					<div className="mb-6">
-						<label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="confirmPassword">
+						<label className="block text-sm font-medium text-gray-700 mb-2 dark:text-neutral-300" htmlFor="confirmPassword">
 							Confirm Password
 						</label>
 						<input
@@ -138,7 +138,7 @@ export function RegisterForm() {
 							value={confirmPassword}
 							onChange={(e) => setConfirmPassword(e.target.value)}
 							placeholder="Confirm your password"
-							className="w-full rounded border bg-neutral-50 px-4 py-2"
+							className="w-full rounded border bg-neutral-50 px-4 py-2 dark:bg-neutral-700 dark:border-neutral-600 dark:text-neutral-100 dark:placeholder:text-neutral-400"
 							required
 							minLength={8}
 						/>
@@ -147,16 +147,16 @@ export function RegisterForm() {
 					<button
 						type="submit"
 						disabled={isLoading}
-						className="w-full rounded bg-neutral-800 px-4 py-2 text-neutral-200 hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed"
+						className="w-full rounded bg-neutral-800 px-4 py-2 text-neutral-200 hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed dark:bg-neutral-600 dark:hover:bg-neutral-500"
 					>
 						{isLoading ? "Creating Account..." : "Create Account"}
 					</button>
 				</form>
 
 				<div className="mt-6 text-center">
-					<p className="text-sm text-gray-600">
+					<p className="text-sm text-gray-600 dark:text-neutral-400">
 						Already have an account?{" "}
-						<LinkWithChannel href="/login" className="text-blue-600 hover:text-blue-800">
+						<LinkWithChannel href="/login" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
 							Sign in here
 						</LinkWithChannel>
 					</p>

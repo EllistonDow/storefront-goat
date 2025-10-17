@@ -7,7 +7,7 @@ export async function LoginForm() {
 	return (
 		<div className="mx-auto mt-16 w-full max-w-lg">
 			<form
-				className="rounded border p-8 shadow-md"
+				className="rounded border p-8 shadow-md bg-white dark:bg-neutral-800 dark:border-neutral-600"
 				action={async (formData) => {
 					"use server";
 
@@ -42,7 +42,7 @@ export async function LoginForm() {
 					}
 				}}
 			>
-				<h1 className="mb-6 text-2xl font-bold text-center">Sign In</h1>
+				<h1 className="mb-6 text-2xl font-bold text-center text-neutral-900 dark:text-neutral-100">Sign In</h1>
 				
 				<div className="mb-2">
 					<label className="sr-only" htmlFor="email">
@@ -52,7 +52,7 @@ export async function LoginForm() {
 						type="email"
 						name="email"
 						placeholder="Email"
-						className="w-full rounded border bg-neutral-50 px-4 py-2"
+						className="w-full rounded border bg-neutral-50 px-4 py-2 dark:bg-neutral-700 dark:border-neutral-600 dark:text-neutral-100 dark:placeholder:text-neutral-400"
 						required
 					/>
 				</div>
@@ -66,13 +66,13 @@ export async function LoginForm() {
 						placeholder="Password"
 						autoCapitalize="off"
 						autoComplete="off"
-						className="w-full rounded border bg-neutral-50 px-4 py-2"
+						className="w-full rounded border bg-neutral-50 px-4 py-2 dark:bg-neutral-700 dark:border-neutral-600 dark:text-neutral-100 dark:placeholder:text-neutral-400"
 						required
 					/>
 				</div>
 
 				<button
-					className="w-full rounded bg-neutral-800 px-4 py-2 text-neutral-200 hover:bg-neutral-700"
+					className="w-full rounded bg-neutral-800 px-4 py-2 text-neutral-200 hover:bg-neutral-700 dark:bg-neutral-600 dark:hover:bg-neutral-500"
 					type="submit"
 				>
 					Log In
@@ -80,15 +80,15 @@ export async function LoginForm() {
 			</form>
 			
 			<div className="mt-6 text-center space-y-2">
-				<p className="text-sm text-gray-600">
+				<p className="text-sm text-gray-600 dark:text-neutral-400">
 					Don&apos;t have an account?{" "}
-					<LinkWithChannel href="/register" className="text-blue-600 hover:text-blue-800">
+					<LinkWithChannel href="/register" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
 						Create one here
 					</LinkWithChannel>
 				</p>
-				<p className="text-sm text-gray-600">
+				<p className="text-sm text-gray-600 dark:text-neutral-400">
 					Forgot your password?{" "}
-					<LinkWithChannel href="/forgot-password" className="text-blue-600 hover:text-blue-800">
+					<LinkWithChannel href="/forgot-password" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
 						Reset it here
 					</LinkWithChannel>
 				</p>
