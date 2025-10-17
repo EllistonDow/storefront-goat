@@ -25,52 +25,61 @@ export default async function Page(props: { params: Promise<{ channel: string }>
 
 	const products = data.collection?.products.edges.map(({ node: product }) => product);
 
-	// 使用网络开源图片的英雄横幅数据
+	// 使用时尚美女图片的英雄横幅数据
 	const heroSlides = [
 		{
 			id: "1",
-			title: "Discover Amazing Products",
-			subtitle: "Shop the latest trends with unbeatable prices and premium quality",
-			image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-			ctaText: "Shop Now",
-			ctaLink: "/products",
+			title: "Fashion Forward",
+			subtitle: "Discover the latest trends and style inspiration for the modern woman",
+			image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+			ctaText: "Shop Fashion",
+			ctaLink: "/collections/women",
 			badge: "New Collection"
 		},
 		{
 			id: "2", 
-			title: "Premium Quality",
-			subtitle: "Crafted with care for the modern lifestyle and exceptional durability",
-			image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-			ctaText: "Explore",
-			ctaLink: "/collections/premium",
-			badge: "Limited Time"
+			title: "Elegant Style",
+			subtitle: "Sophisticated pieces that define your unique personality and grace",
+			image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2128&q=80",
+			ctaText: "Explore Style",
+			ctaLink: "/collections/elegant",
+			badge: "Premium"
 		},
 		{
 			id: "3",
-			title: "Fast & Free Shipping",
-			subtitle: "Get your orders delivered in 24 hours with our premium shipping service",
-			image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80", 
-			ctaText: "Learn More",
-			ctaLink: "/shipping",
-			badge: "Free Delivery"
+			title: "Trendy Looks",
+			subtitle: "Stay ahead of the curve with our curated selection of trendy outfits",
+			image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", 
+			ctaText: "View Trends",
+			ctaLink: "/collections/trendy",
+			badge: "Hot Trend"
 		},
 		{
 			id: "4",
-			title: "Exclusive Deals",
-			subtitle: "Don't miss out on our limited-time offers and exclusive member discounts",
-			image: "https://images.unsplash.com/photo-1607082349566-187342175e2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-			ctaText: "View Deals",
-			ctaLink: "/collections/sale",
-			badge: "Hot Deals"
+			title: "Beauty & Style",
+			subtitle: "Complete your look with our beauty essentials and fashion accessories",
+			image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+			ctaText: "Shop Beauty",
+			ctaLink: "/collections/beauty",
+			badge: "Beauty"
 		},
 		{
 			id: "5",
-			title: "Customer Satisfaction",
-			subtitle: "Join thousands of satisfied customers who trust our quality and service",
-			image: "https://images.unsplash.com/photo-1556742111-a301076d9d18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-			ctaText: "Read Reviews",
-			ctaLink: "/reviews",
-			badge: "5-Star Rated"
+			title: "Confident You",
+			subtitle: "Express your confidence with pieces that make you feel amazing",
+			image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+			ctaText: "Be Confident",
+			ctaLink: "/collections/confidence",
+			badge: "Empower"
+		},
+		{
+			id: "6",
+			title: "Summer Vibes",
+			subtitle: "Embrace the season with fresh, vibrant styles perfect for summer",
+			image: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+			ctaText: "Summer Style",
+			ctaLink: "/collections/summer",
+			badge: "Summer"
 		}
 	];
 
