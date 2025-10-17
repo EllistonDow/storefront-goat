@@ -33,23 +33,23 @@ export function AddressManagement({ addresses }: AddressManagementProps) {
 	return (
 		<div className="space-y-6">
 			<div className="flex items-center justify-between">
-				<h2 className="text-xl font-semibold text-gray-900">Address Book</h2>
+				<h2 className="text-xl font-semibold text-gray-900 dark:text-neutral-100">Address Book</h2>
 				<button
 					onClick={handleAddAddress}
-					className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+					className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
 				>
 					Add New Address
 				</button>
 			</div>
 
 			{showCreateForm && (
-				<div className="rounded border p-6">
-					<h3 className="mb-4 text-lg font-medium">Add New Address</h3>
+				<div className="rounded border p-6 dark:border-neutral-600 dark:bg-neutral-800">
+					<h3 className="mb-4 text-lg font-medium text-neutral-900 dark:text-neutral-100">Add New Address</h3>
 					<div className="text-center py-8">
-						<p className="text-gray-600 mb-4">Address management will be available soon.</p>
+						<p className="text-gray-600 mb-4 dark:text-neutral-400">Address management will be available soon.</p>
 						<button
 							onClick={handleBackToList}
-							className="rounded bg-gray-600 px-4 py-2 text-white hover:bg-gray-700"
+							className="rounded bg-gray-600 px-4 py-2 text-white hover:bg-gray-700 dark:bg-neutral-600 dark:hover:bg-neutral-500"
 						>
 							Back to List
 						</button>
@@ -58,13 +58,13 @@ export function AddressManagement({ addresses }: AddressManagementProps) {
 			)}
 
 			{editingAddress && (
-				<div className="rounded border p-6">
+				<div className="rounded border p-6 dark:border-neutral-600 dark:bg-neutral-800">
 					<h3 className="mb-4 text-lg font-medium">Edit Address</h3>
 					<div className="text-center py-8">
 						<p className="text-gray-600 mb-4">Address editing will be available soon.</p>
 						<button
 							onClick={handleBackToList}
-							className="rounded bg-gray-600 px-4 py-2 text-white hover:bg-gray-700"
+							className="rounded bg-gray-600 px-4 py-2 text-white hover:bg-gray-700 dark:bg-neutral-600 dark:hover:bg-neutral-500"
 						>
 							Back to List
 						</button>
@@ -73,14 +73,14 @@ export function AddressManagement({ addresses }: AddressManagementProps) {
 			)}
 
 			{!showCreateForm && !editingAddress && (
-				<div className="rounded border p-6">
+				<div className="rounded border p-6 dark:border-neutral-600 dark:bg-neutral-800">
 					<h3 className="mb-4 text-lg font-medium">Saved Addresses</h3>
 					{addresses.length === 0 ? (
 						<div className="text-center py-8">
 							<p className="text-gray-600 mb-4">You don't have any saved addresses yet.</p>
 							<button
 								onClick={handleAddAddress}
-								className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+								className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
 							>
 								Add Your First Address
 							</button>

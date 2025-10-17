@@ -62,32 +62,32 @@ export function ProfileEditForm({ user, onSuccess }: ProfileEditFormProps) {
 	return (
 		<form onSubmit={handleSubmit} className="space-y-4">
 			{error && (
-				<div className="rounded bg-red-50 p-3 text-red-700">
+				<div className="rounded bg-red-50 p-3 text-red-700 dark:bg-red-900 dark:text-red-300">
 					{error}
 				</div>
 			)}
 			
 			{success && (
-				<div className="rounded bg-green-50 p-3 text-green-700">
+				<div className="rounded bg-green-50 p-3 text-green-700 dark:bg-green-900 dark:text-green-300">
 					{success}
 				</div>
 			)}
 
 			<div>
-				<label className="block text-sm font-medium text-gray-700 mb-1">
+				<label className="block text-sm font-medium text-gray-700 mb-1 dark:text-neutral-300">
 					Email Address
 				</label>
 				<input
 					type="email"
 					value={user.email}
 					disabled
-					className="w-full rounded border border-gray-300 bg-gray-50 px-3 py-2 text-gray-500"
+					className="w-full rounded border border-gray-300 bg-gray-50 px-3 py-2 text-gray-500 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-400"
 				/>
-				<p className="mt-1 text-xs text-gray-500">Email cannot be changed</p>
+				<p className="mt-1 text-xs text-gray-500 dark:text-neutral-400">Email cannot be changed</p>
 			</div>
 
 			<div>
-				<label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+				<label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1 dark:text-neutral-300">
 					First Name
 				</label>
 				<input
@@ -95,13 +95,13 @@ export function ProfileEditForm({ user, onSuccess }: ProfileEditFormProps) {
 					type="text"
 					value={firstName}
 					onChange={(e) => setFirstName(e.target.value)}
-					className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+					className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100 dark:focus:border-blue-400 dark:focus:ring-blue-400"
 					placeholder="Enter your first name"
 				/>
 			</div>
 
 			<div>
-				<label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
+				<label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1 dark:text-neutral-300">
 					Last Name
 				</label>
 				<input
@@ -109,7 +109,7 @@ export function ProfileEditForm({ user, onSuccess }: ProfileEditFormProps) {
 					type="text"
 					value={lastName}
 					onChange={(e) => setLastName(e.target.value)}
-					className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+					className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100 dark:focus:border-blue-400 dark:focus:ring-blue-400"
 					placeholder="Enter your last name"
 				/>
 			</div>
@@ -118,7 +118,7 @@ export function ProfileEditForm({ user, onSuccess }: ProfileEditFormProps) {
 				<button
 					type="submit"
 					disabled={isLoading}
-					className="flex-1 rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:bg-blue-400"
+					className="flex-1 rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:bg-blue-400 dark:bg-blue-500 dark:hover:bg-blue-600"
 				>
 					{isLoading ? "Updating..." : "Update Profile"}
 				</button>
@@ -131,7 +131,7 @@ export function ProfileEditForm({ user, onSuccess }: ProfileEditFormProps) {
 						setError("");
 						setSuccess("");
 					}}
-					className="flex-1 rounded border border-gray-300 px-4 py-2 text-gray-700 hover:bg-gray-50"
+					className="flex-1 rounded border border-gray-300 px-4 py-2 text-gray-700 hover:bg-gray-50 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-600"
 				>
 					Cancel
 				</button>

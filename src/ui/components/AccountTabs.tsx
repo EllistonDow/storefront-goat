@@ -27,33 +27,33 @@ export function AccountTabs({ user }: AccountTabsProps) {
 		switch (activeTab) {
 			case "profile":
 				return (
-					<div className="rounded border p-6">
-						<h2 className="mb-6 text-xl font-semibold">Profile Information</h2>
+					<div className="rounded border p-6 dark:border-neutral-600 dark:bg-neutral-800">
+						<h2 className="mb-6 text-xl font-semibold text-neutral-900 dark:text-neutral-100">Profile Information</h2>
 						<ProfileEditForm user={user} />
 					</div>
 				);
 			case "password":
 				return (
-					<div className="rounded border p-6">
-						<h2 className="mb-6 text-xl font-semibold">Change Password</h2>
+					<div className="rounded border p-6 dark:border-neutral-600 dark:bg-neutral-800">
+						<h2 className="mb-6 text-xl font-semibold text-neutral-900 dark:text-neutral-100">Change Password</h2>
 						<PasswordChangeForm />
 					</div>
 				);
 			case "addresses":
 				return (
-					<div className="rounded border p-6">
+					<div className="rounded border p-6 dark:border-neutral-600 dark:bg-neutral-800">
 						<AddressManagement addresses={user.addresses || []} />
 					</div>
 				);
 			case "orders":
 				return (
-					<div className="rounded border p-6">
-						<h2 className="mb-6 text-xl font-semibold">Order History</h2>
+					<div className="rounded border p-6 dark:border-neutral-600 dark:bg-neutral-800">
+						<h2 className="mb-6 text-xl font-semibold text-neutral-900 dark:text-neutral-100">Order History</h2>
 						<div className="text-center py-8">
-							<p className="text-gray-600 mb-4">View your order history and track your orders</p>
+							<p className="text-gray-600 mb-4 dark:text-neutral-400">View your order history and track your orders</p>
 							<LinkWithChannel
 								href="/orders"
-								className="inline-block rounded bg-blue-600 px-6 py-2 text-white hover:bg-blue-700"
+								className="inline-block rounded bg-blue-600 px-6 py-2 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
 							>
 								View All Orders
 							</LinkWithChannel>
@@ -68,7 +68,7 @@ export function AccountTabs({ user }: AccountTabsProps) {
 	return (
 		<div className="space-y-6">
 			{/* Tab Navigation */}
-			<div className="border-b border-gray-200">
+				<div className="border-b border-gray-200 dark:border-neutral-700">
 				<nav className="-mb-px flex space-x-8">
 					{tabs.map((tab) => (
 						<button
@@ -76,8 +76,8 @@ export function AccountTabs({ user }: AccountTabsProps) {
 							onClick={() => setActiveTab(tab.id)}
 							className={`py-2 px-1 border-b-2 font-medium text-sm ${
 								activeTab === tab.id
-									? "border-blue-500 text-blue-600"
-									: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+									? "border-blue-500 text-blue-600 dark:border-blue-400 dark:text-blue-400"
+									: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-neutral-400 dark:hover:text-neutral-200 dark:hover:border-neutral-500"
 							}`}
 						>
 							<span className="mr-2">{tab.icon}</span>
@@ -93,12 +93,12 @@ export function AccountTabs({ user }: AccountTabsProps) {
 			</div>
 
 			{/* Quick Actions */}
-			<div className="mt-8 rounded border p-6 bg-gray-50">
-				<h3 className="mb-4 text-lg font-medium">Quick Actions</h3>
+				<div className="mt-8 rounded border p-6 bg-gray-50 dark:bg-neutral-800 dark:border-neutral-600">
+					<h3 className="mb-4 text-lg font-medium text-neutral-900 dark:text-neutral-100">Quick Actions</h3>
 				<div className="flex flex-wrap gap-3">
 					<LinkWithChannel
 						href="/orders"
-						className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+							className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
 					>
 						View Orders
 					</LinkWithChannel>
@@ -106,7 +106,7 @@ export function AccountTabs({ user }: AccountTabsProps) {
 					<form action="/api/auth/logout" method="POST" className="inline">
 						<button
 							type="submit"
-							className="rounded bg-gray-600 px-4 py-2 text-white hover:bg-gray-700"
+								className="rounded bg-gray-600 px-4 py-2 text-white hover:bg-gray-700 dark:bg-neutral-600 dark:hover:bg-neutral-500"
 						>
 							Log Out
 						</button>

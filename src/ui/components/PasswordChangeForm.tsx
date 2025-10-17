@@ -66,19 +66,19 @@ export function PasswordChangeForm({ onSuccess }: PasswordChangeFormProps) {
 	return (
 		<form onSubmit={handleSubmit} className="space-y-4">
 			{error && (
-				<div className="rounded bg-red-50 p-3 text-red-700">
+				<div className="rounded bg-red-50 p-3 text-red-700 dark:bg-red-900 dark:text-red-300">
 					{error}
 				</div>
 			)}
 			
 			{success && (
-				<div className="rounded bg-green-50 p-3 text-green-700">
+				<div className="rounded bg-green-50 p-3 text-green-700 dark:bg-green-900 dark:text-green-300">
 					{success}
 				</div>
 			)}
 
 			<div>
-				<label htmlFor="currentPassword" className="block text-sm font-medium text-gray-700 mb-1">
+				<label htmlFor="currentPassword" className="block text-sm font-medium text-gray-700 mb-1 dark:text-neutral-300">
 					Current Password
 				</label>
 				<input
@@ -87,13 +87,13 @@ export function PasswordChangeForm({ onSuccess }: PasswordChangeFormProps) {
 					value={currentPassword}
 					onChange={(e) => setCurrentPassword(e.target.value)}
 					required
-					className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+					className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100 dark:focus:border-blue-400 dark:focus:ring-blue-400"
 					placeholder="Enter your current password"
 				/>
 			</div>
 
 			<div>
-				<label htmlFor="newPassword" className="block text-sm font-medium text-gray-700 mb-1">
+				<label htmlFor="newPassword" className="block text-sm font-medium text-gray-700 mb-1 dark:text-neutral-300">
 					New Password
 				</label>
 				<input
@@ -103,14 +103,14 @@ export function PasswordChangeForm({ onSuccess }: PasswordChangeFormProps) {
 					onChange={(e) => setNewPassword(e.target.value)}
 					required
 					minLength={8}
-					className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+					className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100 dark:focus:border-blue-400 dark:focus:ring-blue-400"
 					placeholder="Enter your new password"
 				/>
-				<p className="mt-1 text-xs text-gray-500">Password must be at least 8 characters long</p>
+				<p className="mt-1 text-xs text-gray-500 dark:text-neutral-400">Password must be at least 8 characters long</p>
 			</div>
 
 			<div>
-				<label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">
+				<label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1 dark:text-neutral-300">
 					Confirm New Password
 				</label>
 				<input
@@ -120,7 +120,7 @@ export function PasswordChangeForm({ onSuccess }: PasswordChangeFormProps) {
 					onChange={(e) => setConfirmPassword(e.target.value)}
 					required
 					minLength={8}
-					className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+					className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100 dark:focus:border-blue-400 dark:focus:ring-blue-400"
 					placeholder="Confirm your new password"
 				/>
 			</div>
@@ -129,7 +129,7 @@ export function PasswordChangeForm({ onSuccess }: PasswordChangeFormProps) {
 				<button
 					type="submit"
 					disabled={isLoading}
-					className="flex-1 rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:bg-blue-400"
+						className="flex-1 rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:bg-blue-400 dark:bg-blue-500 dark:hover:bg-blue-600"
 				>
 					{isLoading ? "Changing..." : "Change Password"}
 				</button>
@@ -143,7 +143,7 @@ export function PasswordChangeForm({ onSuccess }: PasswordChangeFormProps) {
 						setError("");
 						setSuccess("");
 					}}
-					className="flex-1 rounded border border-gray-300 px-4 py-2 text-gray-700 hover:bg-gray-50"
+						className="flex-1 rounded border border-gray-300 px-4 py-2 text-gray-700 hover:bg-gray-50 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-600"
 				>
 					Cancel
 				</button>

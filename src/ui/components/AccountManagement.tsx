@@ -24,8 +24,8 @@ export async function AccountManagement() {
 		return (
 			<div className="mx-auto mt-8 w-full max-w-6xl">
 				<div className="mb-8">
-					<h1 className="text-3xl font-bold text-gray-900">My Account</h1>
-					<p className="mt-2 text-gray-600">Manage your account settings and preferences</p>
+					<h1 className="text-3xl font-bold text-gray-900 dark:text-neutral-100">My Account</h1>
+					<p className="mt-2 text-gray-600 dark:text-neutral-400">Manage your account settings and preferences</p>
 				</div>
 
 				<AccountTabs user={user} />
