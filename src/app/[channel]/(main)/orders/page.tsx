@@ -16,14 +16,14 @@ export default async function OrderPage() {
 
 	return (
 		<div className="mx-auto max-w-7xl p-8">
-			<h1 className="text-2xl font-bold tracking-tight text-neutral-900">
+			<h1 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
 				{user.firstName ? user.firstName : user.email}&rsquo;s orders
 			</h1>
 
 			{orders.length === 0 ? (
 				<div className="mt-8">
-					<div className="rounded border border-neutral-100 bg-white p-4">
-						<div className="flex items-center">No orders found</div>
+					<div className="rounded border border-neutral-100 bg-white p-4 dark:border-neutral-700 dark:bg-neutral-800">
+						<div className="flex items-center text-neutral-900 dark:text-neutral-100">No orders found</div>
 					</div>
 				</div>
 			) : (

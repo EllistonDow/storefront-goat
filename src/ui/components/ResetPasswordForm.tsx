@@ -102,12 +102,12 @@ export function ResetPasswordForm() {
 	if (!token) {
 		return (
 			<div className="mx-auto mt-16 w-full max-w-lg">
-				<div className="rounded border p-8 shadow-md text-center">
-					<h1 className="mb-4 text-2xl font-bold text-red-600">Invalid Reset Link</h1>
-					<p className="mb-6 text-gray-600">
+				<div className="rounded border p-8 shadow-md text-center dark:border-neutral-600 dark:bg-neutral-800">
+					<h1 className="mb-4 text-2xl font-bold text-red-600 dark:text-red-400">Invalid Reset Link</h1>
+					<p className="mb-6 text-gray-600 dark:text-neutral-400">
 						This password reset link is invalid or has expired.
 					</p>
-					<LinkWithChannel href="/forgot-password" className="text-blue-600 hover:text-blue-800">
+					<LinkWithChannel href="/forgot-password" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
 						Request a new reset link
 					</LinkWithChannel>
 				</div>
@@ -117,27 +117,27 @@ export function ResetPasswordForm() {
 
 	return (
 		<div className="mx-auto mt-16 w-full max-w-lg">
-			<div className="rounded border p-8 shadow-md">
-				<h1 className="mb-6 text-2xl font-bold text-center">Set New Password</h1>
-				<p className="mb-6 text-center text-gray-600">
+			<div className="rounded border p-8 shadow-md dark:border-neutral-600 dark:bg-neutral-800">
+				<h1 className="mb-6 text-2xl font-bold text-center text-neutral-900 dark:text-neutral-100">Set New Password</h1>
+				<p className="mb-6 text-center text-gray-600 dark:text-neutral-400">
 					Enter your new password below.
 				</p>
 				
 				{error && (
-					<div className="mb-4 rounded bg-red-100 p-3 text-red-700">
+					<div className="mb-4 rounded bg-red-100 p-3 text-red-700 dark:bg-red-900 dark:text-red-300">
 						{error}
 					</div>
 				)}
 
 				{message && (
-					<div className="mb-4 rounded bg-green-100 p-3 text-green-700">
+					<div className="mb-4 rounded bg-green-100 p-3 text-green-700 dark:bg-green-900 dark:text-green-300">
 						{message}
 					</div>
 				)}
 
 				<form onSubmit={handleSubmit}>
 					<div className="mb-4">
-						<label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="password">
+						<label className="block text-sm font-medium text-gray-700 mb-2 dark:text-neutral-300" htmlFor="password">
 							New Password
 						</label>
 						<input
@@ -146,14 +146,14 @@ export function ResetPasswordForm() {
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 							placeholder="Enter your new password"
-							className="w-full rounded border bg-neutral-50 px-4 py-2"
+							className="w-full rounded border bg-neutral-50 px-4 py-2 dark:bg-neutral-700 dark:border-neutral-600 dark:text-neutral-100 dark:placeholder:text-neutral-400"
 							required
 							minLength={8}
 						/>
 					</div>
 
 					<div className="mb-6">
-						<label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="confirmPassword">
+						<label className="block text-sm font-medium text-gray-700 mb-2 dark:text-neutral-300" htmlFor="confirmPassword">
 							Confirm New Password
 						</label>
 						<input
@@ -162,7 +162,7 @@ export function ResetPasswordForm() {
 							value={confirmPassword}
 							onChange={(e) => setConfirmPassword(e.target.value)}
 							placeholder="Confirm your new password"
-							className="w-full rounded border bg-neutral-50 px-4 py-2"
+							className="w-full rounded border bg-neutral-50 px-4 py-2 dark:bg-neutral-700 dark:border-neutral-600 dark:text-neutral-100 dark:placeholder:text-neutral-400"
 							required
 							minLength={8}
 						/>
@@ -171,16 +171,16 @@ export function ResetPasswordForm() {
 					<button
 						type="submit"
 						disabled={isLoading}
-						className="w-full rounded bg-neutral-800 px-4 py-2 text-neutral-200 hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed"
+							className="w-full rounded bg-neutral-800 px-4 py-2 text-neutral-200 hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed dark:bg-neutral-600 dark:hover:bg-neutral-500"
 					>
 						{isLoading ? "Resetting..." : "Reset Password"}
 					</button>
 				</form>
 
 				<div className="mt-6 text-center">
-					<p className="text-sm text-gray-600">
+					<p className="text-sm text-gray-600 dark:text-neutral-400">
 						Remember your password?{" "}
-						<LinkWithChannel href="/login" className="text-blue-600 hover:text-blue-800">
+						<LinkWithChannel href="/login" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
 							Sign in here
 						</LinkWithChannel>
 					</p>
