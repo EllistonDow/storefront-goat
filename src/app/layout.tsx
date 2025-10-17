@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Suspense, type ReactNode } from "react";
-import { type Metadata } from "next";
+import { type Metadata, type Viewport } from "next";
 import { DraftModeNotification } from "@/ui/components/DraftModeNotification";
 import { Providers } from "@/ui/providers/Providers";
 import { PWAInstallPrompt } from "@/ui/components/PWAInstallPrompt";
@@ -15,7 +15,6 @@ export const metadata: Metadata = {
 		? new URL(process.env.NEXT_PUBLIC_STOREFRONT_URL)
 		: undefined,
 	manifest: "/manifest.json",
-	themeColor: "#000000",
 	appleWebApp: {
 		capable: true,
 		statusBarStyle: "default",
@@ -35,6 +34,10 @@ export const metadata: Metadata = {
 		title: "Saleor Storefront example",
 		description: "Starter pack for building performant e-commerce experiences with Saleor.",
 	},
+};
+
+export const viewport: Viewport = {
+	themeColor: "#000000",
 };
 
 export default function RootLayout(props: { children: ReactNode }) {
